@@ -1,0 +1,53 @@
+$outer: 30em;
+$inner: 16em;
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #EEE;
+  font-family: 'Lato', sans-serif;
+  transition: all 1s;
+}
+
+.lamp {    
+    width: $outer;
+    height: $outer;
+
+    .cls-1{
+        fill:none;
+    }
+    .cls-2{
+        fill:#00bfa5;
+    }
+    .cls-3{
+        fill:none
+    }
+    .cls-4{
+        fill:#009688;
+    }
+    .cls-5{
+        fill:#023831;
+        opacity:0.1;
+    }
+    .cls-6 {
+        fill:#f0ff99;
+    }
+    .cls-7{
+        clip-path:url(#clip-path);
+    }
+    .cls-8{
+        fill:#fffc80;
+    }
+
+    &:hover {
+        .cls-2{
+            fill:#00b8d4;
+        }
+    }
+}
