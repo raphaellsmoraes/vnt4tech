@@ -1,0 +1,85 @@
+@import "../../shared/_variables.scss";
+
+.transition{
+    transition: all 1s;
+}
+
+.bulb-transition {
+    transition: all 0.1s;
+}
+
+.lighting-bulb-transition {
+    transition: all 0.5s;
+}
+
+.lamp { 
+    width: $outer;
+    height: $outer;
+
+    .cls-1 {
+        fill:#148c9b;
+    }
+    .cls-2 {
+        fill:#107b84;
+    }
+    .cls-3 {
+        fill:#117f89;
+    }
+    .cls-4 {
+        fill:#328f99;
+    }
+
+    .cls-1, .cls-2, .cls-3, .cls-4 {
+        @extend .transition;
+    }
+
+    .cls-4.bulb {
+        @extend .bulb-transition;
+    }
+
+    .cls-2.bulb-shadow {
+        @extend .lighting-bulb-transition;
+    }
+
+    &:hover{
+        .cls-1 {
+            fill: #18A38E;
+        }
+        .cls-1.upper-torso {
+            fill: lighten(#18A38E, 7%);
+        }
+        .cls-1.bottom-torso{
+            fill: lighten(#18A38E, 5%);
+        }
+        .cls-1.base {
+            fill: lighten(#18A38E, 4%);
+            animation: glow-base 0.9s infinite ease alternate;
+        }
+        .cls-2.bulb-shadow {
+            fill: hsl(68.8, 100%, 80%);
+            animation: glow-bulb-shadow 0.1s infinite ease alternate;
+        }
+        .cls-3 {
+            fill: #179A89;
+        }
+        .cls-4 {
+            fill: hsl(58.6, 100%, 75.1%);
+            animation: glow-bulb 0.1s infinite ease-out alternate;
+        }
+    }
+}
+
+@keyframes glow-bulb {
+    0% {fill: hsl(58.6, 100%, 68.9%)}
+    100% {fill: hsl(58.6, 100%, 75.1%)}
+}
+
+@keyframes glow-bulb-shadow {
+    0% { fill: hsl(68.8, 100%, 75%)}
+    100% { fill: hsl(68.8, 100%, 80%)}
+}
+
+@keyframes glow-base {
+    0% { fill: lighten(hsl(170.9, 74.3%, 33.7%), 4%)}
+    100% { fill: lighten(hsl(170.9, 74.3%, 36.7%), 4%)}
+}
