@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { LampComponent } from './lamp/lamp.component';
+import { SwitchComponent } from './switch/switch.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LampComponent
+    LampComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,

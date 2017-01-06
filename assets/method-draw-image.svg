@@ -1,0 +1,15 @@
+<svg width="868.0000000000001" height="901" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <style>.cls-1{fill:url(#linear-gradient);}.cls-2{fill:url(#linear-gradient-2);}</style>
+ </defs>
+ <title>on_light</title>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="903" width="870" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" d="m661,104.92c0.43,-2.39 1,-5.37 1.88,-8.82a56.58,56.58 0 0 0 -1.88,8.82z" class="cls-1"/>
+  <path stroke="null" id="svg_2" d="m543.110464,48.441789c-7.777031,-27.357964 -54.901792,-48.395191 -111.856258,-48.395191s-104.079227,21.037227 -111.85144,48.395191c0.06264,0.206494 -319.402766,641.345824 -319.402766,641.345824l862.990259,0.251822s-319.436495,-640.031312 -319.879795,-641.597646z" class="cls-2"/>
+ </g>
+</svg>

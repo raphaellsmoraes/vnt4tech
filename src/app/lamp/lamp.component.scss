@@ -1,20 +1,12 @@
 @import "../../shared/_variables.scss";
 
 .transition{
-    transition: all 1s;
-}
-
-.bulb-transition {
     transition: all 0.1s;
 }
 
-.lighting-bulb-transition {
-    transition: all 0.5s;
-}
-
 .lamp { 
-    width: $outer;
-    height: $outer;
+    width: 100%;
+    height: auto;
 
     .cls-1 {
         fill:#148c9b;
@@ -30,15 +22,46 @@
     }
 
     .cls-1, .cls-2, .cls-3, .cls-4 {
-        @extend .transition;
+        @extend .transition;    
     }
 
-    .cls-4.bulb {
-        @extend .bulb-transition;
-    }
+    .light {
+        #linear-gradient {
+            .stop-1 {
+                stop-color: #f0ff99;
+            }
+            .stop-2 {
+                stop-color: #f0ff9d;
+                stop-opacity: 0.91;
+            }
+            .stop-3 {
+                stop-color: #f0ffab;
+                stop-opacity: 0.59;
+            }
+            .stop-4 {
+                stop-color: #f0ffb7;
+                stop-opacity: 0.34;
+            }
+            .stop-5 {
+                stop-color: #f0ffbf;
+                stop-opacity: 0.15;
+            }
+            .stop-6 {
+                stop-color: #f0ffc4;
+                stop-opacity: 0.04;
+            }
+            .stop-7 {
+                stop-color: #f0ffc6;
+                stop-opacity: 0;
+            }
+        }
 
-    .cls-2.bulb-shadow {
-        @extend .lighting-bulb-transition;
+        .cls-1 {
+             fill:url(#linear-gradient);
+        } 
+        .cls-2 {
+            fill:url(#linear-gradient-2);
+        }
     }
 
     &:hover{
@@ -53,7 +76,6 @@
         }
         .cls-1.base {
             fill: lighten(#18A38E, 4%);
-            animation: glow-base 0.9s infinite ease alternate;
         }
         .cls-2.bulb-shadow {
             fill: hsl(68.8, 100%, 80%);
@@ -68,6 +90,8 @@
         }
     }
 }
+
+
 
 @keyframes glow-bulb {
     0% {fill: hsl(58.6, 100%, 68.9%)}
