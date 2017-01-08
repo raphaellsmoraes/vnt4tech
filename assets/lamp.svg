@@ -1,5 +1,6 @@
-<svg id="lamp" data-name="lamp" class="lamp off" [ngClass]="setClasses()" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1791 1596.5">
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1791 1596.5">
 <defs>
+<style>.cls-1{fill:#00bfa5;}.cls-2{fill:#118377;}.cls-3{fill:#009688;}.cls-4{fill:#18a38e;}.cls-5{fill:#169688;}.cls-6{fill:#f0ff99;}.cls-7{fill:#fffc80;}.cls-8{fill:url(#linear-gradient);}</style>
 <linearGradient id="linear-gradient" x1="895.5" y1="226.5" x2="895.5" y2="1596.5" gradientUnits="userSpaceOnUse">
 <stop offset="0" stop-color="#f0ff99"/>
 <stop offset="0.07" stop-color="#f0ff9d" stop-opacity="0.91"/>
@@ -39,7 +40,6 @@
 
 <!--Base-->
 <path class="cls-1" d="M1085.85,894.5c-36.12-58.29-107.8-98-190.35-98s-154.23,39.71-190.35,98Z"/>
-
 <!-- Internal lamp -->
 <ellipse class="cls-6" cx="895" cy="338.5" rx="234.5" ry="112"/>
 <path class="cls-7" d="M787.47,238.95c-9.3,23.53-14.58,47.82-14.58,68.81,0,67.71,54.89,87.24,122.61,87.24s122.61-19.53,122.61-87.24c0-20.91-5.24-45.09-14.47-68.54C971.16,231.1,934.21,226.5,895,226.5,856.24,226.5,819.68,231,787.47,238.95Z"/>

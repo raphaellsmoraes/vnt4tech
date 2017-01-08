@@ -1,109 +1,68 @@
 @import "../../shared/_variables.scss";
 
 .transition{
-    transition: all 0.1s;
+    transition: all 1s;
 }
 
-.lamp { 
-    width: 100%;
+.lamp {
+    width: 480px;
     height: auto;
+    @extend .transition;
 
-    .cls-1 {
+    &.off {
+        .cls-1 {
         fill:#148c9b;
-    }
-    .cls-2 {
-        fill:#107b84;
-    }
-    .cls-3 {
-        fill:#117f89;
-    }
-    .cls-4 {
-        fill:#328f99;
-    }
-
-    .cls-1, .cls-2, .cls-3, .cls-4 {
-        @extend .transition;    
-    }
-
-    .light {
-        #linear-gradient {
-            .stop-1 {
-                stop-color: #f0ff99;
-            }
-            .stop-2 {
-                stop-color: #f0ff9d;
-                stop-opacity: 0.91;
-            }
-            .stop-3 {
-                stop-color: #f0ffab;
-                stop-opacity: 0.59;
-            }
-            .stop-4 {
-                stop-color: #f0ffb7;
-                stop-opacity: 0.34;
-            }
-            .stop-5 {
-                stop-color: #f0ffbf;
-                stop-opacity: 0.15;
-            }
-            .stop-6 {
-                stop-color: #f0ffc4;
-                stop-opacity: 0.04;
-            }
-            .stop-7 {
-                stop-color: #f0ffc6;
-                stop-opacity: 0;
-            }
         }
-
-        .cls-1 {
-             fill:url(#linear-gradient);
-        } 
         .cls-2 {
-            fill:url(#linear-gradient-2);
-        }
-    }
-
-    &:hover{
-        .cls-1 {
-            fill: #18A38E;
-        }
-        .cls-1.upper-torso {
-            fill: lighten(#18A38E, 7%);
-        }
-        .cls-1.bottom-torso{
-            fill: lighten(#18A38E, 5%);
-        }
-        .cls-1.base {
-            fill: lighten(#18A38E, 4%);
-        }
-        .cls-2.bulb-shadow {
-            fill: hsl(68.8, 100%, 80%);
-            animation: glow-bulb-shadow 0.1s infinite ease alternate;
+            fill:#107b84;
         }
         .cls-3 {
-            fill: #179A89;
+            fill:#117f89;
         }
         .cls-4 {
-            fill: hsl(58.6, 100%, 75.1%);
-            animation: glow-bulb 0.1s infinite ease-out alternate;
+            fill:#328f99;
+        }
+        .cls-5 {
+            fill:#169688;
+        }
+        .cls-6 {
+            fill:#107B84;
+        }
+        .cls-7 {
+            fill:#328F99;
+        }
+        .cls-8 {
+                fill: url(#linear-gradient);
+                fill-opacity: 0;
         }
     }
-}
+    
+    &.on {
+        .cls-1 {
+        fill:lighten(#148c9b, 10%);
+        }
+        .cls-2 {
+            fill:lighten(#107b84, 5%);
+        }
+        .cls-3 {
+            fill:lighten(#117f89, 10%);
+        }
+        .cls-4 {
+            fill:lighten(#328f99, 10%);
+        }
+        .cls-5 {
+            fill:lighten(#169688, 10%);
+        }
+        .cls-6 {
+            fill:#f0ff99;
+        }
+        .cls-7 {
+            fill:#fffc80;
+        }
+        .cls-8 {
+            fill: url(#linear-gradient);
+            fill-opacity: 1;
+        }
+    }
 
-
-
-@keyframes glow-bulb {
-    0% {fill: hsl(58.6, 100%, 68.9%)}
-    100% {fill: hsl(58.6, 100%, 75.1%)}
-}
-
-@keyframes glow-bulb-shadow {
-    0% { fill: hsl(68.8, 100%, 75%)}
-    100% { fill: hsl(68.8, 100%, 80%)}
-}
-
-@keyframes glow-base {
-    0% { fill: lighten(hsl(170.9, 74.3%, 33.7%), 4%)}
-    100% { fill: lighten(hsl(170.9, 74.3%, 36.7%), 4%)}
 }

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { LampComponent } from './lamp/lamp.component';
 import { SwitchComponent } from './switch/switch.component';
+import { SwitchService } from './shared/switch.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SwitchComponent } from './switch/switch.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [SwitchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
