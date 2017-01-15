@@ -21,7 +21,7 @@ export class SwitchComponent implements OnInit, OnDestroy {
       }
     );
 
-    this._client = new Paho.MQTT.Client('37.187.106.16', 8080, 'Vnt4tech-WebApp');
+    this._client = new Paho.MQTT.Client('37.187.106.16', 8081, 'Vnt4tech-WebApp');
 
     this._client.onConnectionLost = (responseObject: Object) => {
       console.log('Connection lost.');
