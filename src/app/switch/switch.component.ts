@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy} from '@angular/core';
 
 import { Subscription } from 'rxjs/subscription';
 import { SwitchService } from '../shared/switch.service';
+import { Paho } from 'ng2-mqtt';
 
 @Component({
   selector: 'app-switch',
@@ -11,6 +12,7 @@ import { SwitchService } from '../shared/switch.service';
 export class SwitchComponent implements OnInit, OnDestroy {
   private subscription: Subscription;
   private state: boolean;
+  private _client: Paho.MQTT.Client;
 
   constructor(private switchService: SwitchService) {
     this.subscription = switchService.stateChanged$.subscribe(
@@ -18,7 +20,24 @@ export class SwitchComponent implements OnInit, OnDestroy {
         this.state = state;
       }
     );
+
+    this._client = new Paho.MQTT.Client('37.187.106.16', 8080, 'Vnt4tech-WebApp');
+
+    this._client.onConnectionLost = (responseObject: Object) => {
+      console.log('Connection lost.');
+    };
+
+    this._client.onMessageArrived = (message: Paho.MQTT.Message) => {
+      console.log(message.payloadString);
+    };
+
+    this._client.connect({ onSuccess: this.onConnected.bind(this)});
    }
+
+  private onConnected(): void {
+    console.log('Connected to broker.');
+    this._client.subscribe('vnt4tech/web', {});
+  }
 
    ngOnInit() {
      this.setClasses();
@@ -32,6 +51,10 @@ export class SwitchComponent implements OnInit, OnDestroy {
    }
 
   changeState() {
+    let message: Paho.MQTT.Message;
+    (this.state) ? message = new Paho.MQTT.Message("{'seta_led':'desligado'}") : message = new Paho.MQTT.Message("{'seta_led':'ligado'}");
+    message.destinationName = 'vnt4tech/web';
+    this._client.send(message);
     this.switchService.changeSwitch(!this.state);
   }
 

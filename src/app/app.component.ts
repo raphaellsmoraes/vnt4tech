@@ -16,8 +16,14 @@ export class AppComponent {
   constructor(private switchService: SwitchService) {
     this.subscription = switchService.stateChanged$.subscribe(
       state => {
-        console.log(state);
+        if(state) {
+          document.body.classList.remove('off');
+          document.body.classList.add('on');
+        } else {
+          document.body.classList.remove('on');
+          document.body.classList.add('off');
+        }
       }
     );
-   }
+  }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { LampComponent } from './lamp/lamp.component';
 import { SwitchComponent } from './switch/switch.component';
 import { SwitchService } from './shared/switch.service';
+import { Paho } from 'ng2-mqtt';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { SwitchService } from './shared/switch.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
   ],
   providers: [SwitchService],
   bootstrap: [AppComponent]

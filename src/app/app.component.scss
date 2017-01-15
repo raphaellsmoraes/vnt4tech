@@ -11,7 +11,16 @@ body {
   justify-content: center;
   //background: #429ca5;
   font-family: 'Lato', sans-serif;
-  transition: all 1s;
-  /*Gradient background*/
-  background: linear-gradient(#26a69a, #cff09e, #fbffbf);
+
+  &.on {
+      /*Gradient background*/
+      background: -webkit-linear-gradient(#26a69a, #cff09e, #fbffbf);
+      background: -o-linear-gradient(#26a69a, #cff09e, #fbffbf);
+      background: linear-gradient(#26a69a, #cff09e, #fbffbf);
+      transition: all 1s;
+    }
+
+  &.off {
+      background:#429CA5;
+  }
 }
