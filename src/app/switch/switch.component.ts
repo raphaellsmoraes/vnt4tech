@@ -31,7 +31,7 @@ export class SwitchComponent implements OnInit, OnDestroy {
       console.log(message.payloadString);
     };
 
-    this._client.connect({ onSuccess: this.onConnected.bind(this)});
+    this._client.connect({ onSuccess: this.onConnected.bind(this), useSSL: true});
    }
 
   private onConnected(): void {
