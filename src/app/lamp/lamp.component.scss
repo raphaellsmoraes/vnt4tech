@@ -54,9 +54,21 @@
             fill:lighten(#169688, 10%);
         }
         .cls-6 {
+            &.hot {
+                fill: #DB0022;
+            }
+            &.cold {
+                fill: #0037DB;
+            }
             fill:#f0ff99;
         }
         .cls-7 {
+            &.hot {
+                fill: #DB0022;
+            }
+            &.cold {
+                fill: #0037DB;
+            }
             fill:#fffc80;
         }
         .cls-8 {

@@ -12,11 +12,30 @@ import { SwitchService } from '../shared/switch.service';
 export class LampComponent implements OnInit, OnDestroy {
   private state: boolean;
   private subscription: Subscription;
+  private messageSubscription: Subscription;
+  private switchService: SwitchService;
+  private aspect: boolean = true;
 
   constructor(switchService: SwitchService) {
+    this.switchService = switchService;
+
     this.subscription = switchService.stateChanged$.subscribe(
       state => {
         this.state = state;
+      }
+    );
+
+    this.messageSubscription = switchService.messageChanged$.subscribe(
+      message => {
+        if (message.led === 'ligado') {
+          this.switchService.changeSwitch(true);
+          if (message.temperatura >= 30) {
+            this.aspect = true;
+          } else {
+            this.aspect = false;
+          }
+          this.setClasses();
+        }
       }
     );
    }
@@ -29,6 +48,13 @@ export class LampComponent implements OnInit, OnDestroy {
      return{
        off: !this.state,
        on: this.state
+     };
+   }
+
+   setColorAspect() {
+     return {
+       cold: !this.aspect,
+       hot: this.aspect
      };
    }
 
